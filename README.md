@@ -32,4 +32,4 @@
 9. Now I'm getting trickier, I tried hijacking the api response:
 Only thing is it did not work and I got an API access denied. 
 
-10. I tried making a service worker. Alas. No dice.
+10. I tried making a service worker. Alas. We end at 54%. I would love to hear what some of the winning strategies look like. 
