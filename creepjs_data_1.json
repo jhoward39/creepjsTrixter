@@ -1,5 +1,5 @@
 {
-  "trustScore": "candidate:2125976741 1 udp 2113937151 cb7e306e-9242-40a3-99b0-71e65e5718e6.local 53050 typ host generation 0 ufrag ttFy network-cost 999",
+  "trustScore": "candidate:3897843699 1 udp 2113937151 776dddde-3f59-4535-bca2-56c113592f8e.local 49741 typ host generation 0 ufrag /SOm network-cost 999",
   "lies": null,
   "bot": null,
   "fingerprint": "eb6b354a"

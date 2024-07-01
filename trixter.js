@@ -37,10 +37,10 @@ async function runTest(instance) {
   });
 
   // Register the service worker
-  await page.evaluate(async () => {
-    await navigator.serviceWorker.register('/sw.js');
-    await navigator.serviceWorker.ready;
-  });
+  // await page.evaluate(async () => {
+  //   await navigator.serviceWorker.register('/sw.js');
+  //   await navigator.serviceWorker.ready;
+  // });
 
   await page.goto('https://abrahamjuliot.github.io/creepjs/');
   await sleep(4241); // Wait for page to fully load
@@ -73,4 +73,10 @@ async function runTest(instance) {
   console.log(`Iteration ${instance} done. JSON and PDF saved.`);
 }
 
-runTest(1);
+(async () => {
+  for (let i = 1; i <= 3; i++) {
+    console.log(`Starting iteration ${i}...`);
+    await runTest(i);
+    await runTest(i + 3);
+  }
+})();
