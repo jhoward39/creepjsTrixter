@@ -1,5 +1,5 @@
 {
-  "trustScore": "candidate:1570152562 1 udp 2113937151 8ee25329-48b4-4116-b21b-7947a8defbeb.local 52244 typ host generation 0 ufrag MXAb network-cost 999",
+  "trustScore": "candidate:1536041020 1 udp 2113937151 e91c9cad-68d2-43bd-9679-d88b30a41f6b.local 49213 typ host generation 0 ufrag nFCL network-cost 999",
   "lies": null,
   "bot": null,
   "fingerprint": "eb6b354a"
