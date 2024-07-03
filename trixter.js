@@ -20,7 +20,6 @@ async function runTest(instance) {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   await clearBrowserData(page);
-  await page.setRequestInterception(true);
 
   // Serve the service worker script
   await page.setRequestInterception(true);
@@ -36,13 +35,22 @@ async function runTest(instance) {
     }
   });
 
-  // Register the service worker
-  // await page.evaluate(async () => {
-  //   await navigator.serviceWorker.register('/sw.js');
-  //   await navigator.serviceWorker.ready;
-  // });
+  // Navigate to the page to register the service worker
+  await page.goto('https://abrahamjuliot.github.io/creepjs/', { waitUntil: 'networkidle2' });
 
-  await page.goto('https://abrahamjuliot.github.io/creepjs/');
+  // Register the service worker
+  await page.evaluate(async () => {
+    if ('serviceWorker' in navigator) {
+      try {
+        const registration = await navigator.serviceWorker.register('/sw.js');
+        await navigator.serviceWorker.ready;
+        console.log('Service Worker registered with scope:', registration.scope);
+      } catch (error) {
+        console.error('Service Worker registration failed:', error);
+      }
+    }
+  });
+
   await sleep(4241); // Wait for page to fully load
 
   await simulateHumanInteractions(page);
