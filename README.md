@@ -31,3 +31,5 @@
 Only thing is it did not work and I got an API access denied. 
 
 9. I tried making a service worker. Alas. We end at 54%. I would love to hear what some of the winning strategies look like. 
+
+10. WOW update: I ran it a day later with the service worker and I achieved a higher score than I did as a human 83%! WOOOHOOO.
